@@ -6,7 +6,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 1,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [['html', { open: 'never' }], ['list']],
 
   use: {
     baseURL: 'https://www.nickshawqa.com',
