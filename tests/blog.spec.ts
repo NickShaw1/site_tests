@@ -30,6 +30,7 @@ test.describe('Blog page', () => {
   });
 
   test('all post links point to correct slugs', async ({ page }) => {
+    await expect(page.getByRole('article').first()).toBeVisible();
     for (const post of POSTS) {
       const link = page.getByRole('link', { name: post.title }).first();
       await expect(link).toHaveAttribute('href', `#/blog/${post.slug}`);

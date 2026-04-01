@@ -27,31 +27,31 @@ test.describe('Navigation', () => {
   test('Home link navigates to home page', async ({ page }) => {
     await page.getByRole('link', { name: 'About' }).click();
     await page.getByRole('link', { name: 'Home' }).click();
-    await expect(page).toHaveTitle(/Nick Shaw - QA & Delivery Lead/i);
     await expect(page.getByRole('heading', { name: /Hey, I'm Nick/i })).toBeVisible();
+    await expect(page).toHaveTitle(/Nick Shaw - QA & Delivery Lead/i);
   });
 
   test('About link navigates to about page', async ({ page }) => {
     await page.getByRole('link', { name: 'About' }).click();
-    await expect(page).toHaveTitle(/About/i);
     await expect(page.getByRole('heading', { name: /I'm Nick/i, level: 1 })).toBeVisible();
+    await expect(page).toHaveTitle(/About/i);
   });
 
   test('Blog link navigates to blog page', async ({ page }) => {
     await page.getByRole('link', { name: 'Blog' }).click();
-    await expect(page).toHaveTitle(/Blog/i);
     await expect(page.getByRole('heading', { name: 'Blog.', level: 1 })).toBeVisible();
+    await expect(page).toHaveTitle(/Blog/i);
   });
 
   test('Projects link navigates to projects page', async ({ page }) => {
     await page.getByRole('link', { name: 'Projects' }).click();
-    await expect(page).toHaveTitle(/Projects/i);
     await expect(page.getByRole('heading', { name: 'Projects.', level: 1 })).toBeVisible();
+    await expect(page).toHaveTitle(/Projects/i);
   });
 
   test('Contact link navigates to contact page', async ({ page }) => {
     await page.getByRole('link', { name: 'Contact' }).click();
-    await expect(page).toHaveTitle(/Contact/i);
     await expect(page.getByRole('heading', { name: 'Contact me.', level: 1 })).toBeVisible();
+    await expect(page).toHaveTitle(/Contact/i);
   });
 });
